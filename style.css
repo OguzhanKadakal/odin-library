@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #f4f4f4;
+    --text-color: #333333;
+    --accent-color: #e74c3c;
+}
 
 * {
     margin: 0;
@@ -31,4 +38,28 @@ a {
 
 ul, ol {
     list-style: none;
+}
+header {
+    height: 15%;
+    background-color: #3498db;
+}
+
+main {
+    height: 70%;
+    background-color: var(--background-color);
+}
+
+footer {
+    height: 15%;
+    background-color: #3498db;
+}
+
+.library-title {
+    text-align: center;
+    color: var(--text-color);
+}
+
+.footer-text {
+    text-align: center;
+    color: var(--text-color);
 }
