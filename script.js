@@ -16,4 +16,25 @@ function Book(title, author, year, genre, page) {
   this.page = page;
 }
 
-function addBookToLibrary() {}
+const openButton = document.querySelector(".add-book-btn");
+const dialog = document.querySelector("dialog")
+
+openButton.addEventListener("click", () => {
+    dialog.showModal();
+})
+
+dialog.addEventListener("click", e => {
+    const dialogDimensions = dialog.getBoundingClientRect()
+    if (
+      e.clientX < dialogDimensions.left ||
+      e.clientX > dialogDimensions.right ||
+      e.clientY < dialogDimensions.top ||
+      e.clientY > dialogDimensions.bottom
+    ) {
+      dialog.close()
+    }
+  })
+
+
+
+//function addBookToLibrary() {}
