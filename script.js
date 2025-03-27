@@ -1,10 +1,10 @@
 const myLibrary = [
-  new Book("The Hobbit", "J.R.R. Tolkien", "1937", "Fantasy"),
-  new Book("1984", "George Orwell", "1949", "Dystopian"),
-  new Book("To Kill a Mockingbird", "Harper Lee", "1960", "Fiction"),
-  new Book("Pride and Prejudice", "Jane Austen", "1813", "Romance"),
-  new Book("The Great Gatsby", "F. Scott Fitzgerald", "1925", "Tragedy"),
-  new Book("Moby-Dick", "Herman Melville", "1851", "Adventure"),
+  new Book("The Hobbit", "J.R.R. Tolkien", "1937", "Fantasy", 310),
+  new Book("1984", "George Orwell", "1949", "Dystopian", 328),
+  new Book("To Kill a Mockingbird", "Harper Lee", "1960", "Fiction", 281),
+  new Book("Pride and Prejudice", "Jane Austen", "1813", "Romance", 279),
+  new Book("The Great Gatsby", "F. Scott Fitzgerald", "1925", "Tragedy", 180),
+  new Book("Moby-Dick", "Herman Melville", "1851", "Adventure", 635),
 ];
 
 function Book(title, author, year, genre, page) {
@@ -71,7 +71,7 @@ const renderBooks = () => {
     card.appendChild(genre);
 
     const page = document.createElement("p");
-    page.textContent = `Pages: ${book.page || "N/A"}`;
+    page.textContent = `Pages: ${book.page}`;
     card.appendChild(page);
 
     const read = document.createElement("p");
