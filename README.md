@@ -1,1 +1,2 @@
 # odin-library
+This project was created as part of an assignment for [The Odin Project](https://www.theodinproject.com/). It serves as a library management system to practice and demonstrate skills in JavaScript, HTML, and CSS.
