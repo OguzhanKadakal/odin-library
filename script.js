@@ -14,58 +14,76 @@ function Book(title, author, year, genre, page) {
   this.year = year;
   this.genre = genre;
   this.page = page;
+  this.read = false;
 }
 
 //Dialog
 const openButton = document.querySelector(".add-book-btn");
-const dialog = document.querySelector("dialog")
+const dialog = document.querySelector("dialog");
 
 openButton.addEventListener("click", () => {
-    dialog.showModal();
-})
+  dialog.showModal();
+});
 
-dialog.addEventListener("click", e => {
-    const dialogDimensions = dialog.getBoundingClientRect()
-    if (
-      e.clientX < dialogDimensions.left ||
-      e.clientX > dialogDimensions.right ||
-      e.clientY < dialogDimensions.top ||
-      e.clientY > dialogDimensions.bottom
-    ) {
-      dialog.close()
-    }
-  })
+dialog.addEventListener("click", (e) => {
+  const dialogDimensions = dialog.getBoundingClientRect();
+  if (
+    e.clientX < dialogDimensions.left ||
+    e.clientX > dialogDimensions.right ||
+    e.clientY < dialogDimensions.top ||
+    e.clientY > dialogDimensions.bottom
+  ) {
+    dialog.close();
+  }
+});
 
 //Book Cards
 const main = document.querySelector("main");
 
 myLibrary.forEach((book) => {
-    const card = document.createElement("div");
-    card.classList.add("book-card");
+  const card = document.createElement("div");
+  card.classList.add("book-card");
 
-    const title = document.createElement("p");
-    title.textContent = `Title: ${book.title}`;
-    card.appendChild(title);
+  const title = document.createElement("p");
+  title.textContent = `Title: ${book.title}`;
+  card.appendChild(title);
 
-    const author = document.createElement("p");
-    author.textContent = `Author: ${book.author}`;
-    card.appendChild(author);
+  const author = document.createElement("p");
+  author.textContent = `Author: ${book.author}`;
+  card.appendChild(author);
 
-    const year = document.createElement("p");
-    year.textContent = `Year: ${book.year}`;
-    card.appendChild(year);
+  const year = document.createElement("p");
+  year.textContent = `Year: ${book.year}`;
+  card.appendChild(year);
 
-    const genre = document.createElement("p");
-    genre.textContent = `Genre: ${book.genre}`;
-    card.appendChild(genre);
+  const genre = document.createElement("p");
+  genre.textContent = `Genre: ${book.genre}`;
+  card.appendChild(genre);
 
-    const page = document.createElement("p");
-    page.textContent = `Pages: ${book.page || "N/A"}`;
-    card.appendChild(page);
+  const page = document.createElement("p");
+  page.textContent = `Pages: ${book.page || "N/A"}`;
+  card.appendChild(page);
 
-    const cards = document.querySelector(".book-cards")
-    cards.appendChild(card);
+  const read = document.createElement("p");
+  read.textContent = `Read: ${book.read ? "Yes" : "No"}`;
+  card.appendChild(read);
+
+  const readButton = document.createElement("button");
+  readButton.textContent = "Toggle Read";
+  readButton.classList.add("btn-read");
+  readButton.addEventListener("click", () => {
+    book.read = !book.read;
+    read.textContent = `Read: ${book.read ? "Yes" : "No"}`;
+  });
+  card.appendChild(readButton);
+
+  const removeButton = document.createElement("button");
+  removeButton.textContent = "X";
+  removeButton.classList.add("btn-remove");
+  card.appendChild(removeButton);
+
+  const cards = document.querySelector(".book-cards");
+  cards.appendChild(card);
 });
 
-
-//function addBookToLibrary() {}
+function addBookToLibrary() {}
