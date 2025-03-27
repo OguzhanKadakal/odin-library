@@ -122,6 +122,7 @@ submitButton.addEventListener("click", (e) => {
   if (title && author && year && genre) {
     const newBook = new Book(title, author, year, genre, page);
     myLibrary.push(newBook);
+    dialog.close();
     renderBooks();
   }
 });
