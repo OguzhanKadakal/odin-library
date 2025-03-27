@@ -21,6 +21,10 @@ body {
 body {
   line-height: 1.5;
   font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--background-color);
 }
 
 img,
@@ -49,16 +53,14 @@ ol {
   list-style: none;
 }
 header {
-  height: 10%;
   background-color: #3498db;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100px;
 }
 
 main {
-  height: 80%;
-  background-color: var(--background-color);
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -66,11 +68,12 @@ main {
 }
 
 footer {
-  height: 10%;
   background-color: #3498db;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100px;
+  margin-top: 1rem;
 }
 
 .library-title {
