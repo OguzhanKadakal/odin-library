@@ -16,6 +16,7 @@ function Book(title, author, year, genre, page) {
   this.page = page;
 }
 
+//Dialog
 const openButton = document.querySelector(".add-book-btn");
 const dialog = document.querySelector("dialog")
 
@@ -35,6 +36,35 @@ dialog.addEventListener("click", e => {
     }
   })
 
+//Book Cards
+const main = document.querySelector("main");
+
+myLibrary.forEach((book) => {
+    const card = document.createElement("div");
+    card.classList.add("book-card");
+
+    const title = document.createElement("p");
+    title.textContent = `Title: ${book.title}`;
+    card.appendChild(title);
+
+    const author = document.createElement("p");
+    author.textContent = `Author: ${book.author}`;
+    card.appendChild(author);
+
+    const year = document.createElement("p");
+    year.textContent = `Year: ${book.year}`;
+    card.appendChild(year);
+
+    const genre = document.createElement("p");
+    genre.textContent = `Genre: ${book.genre}`;
+    card.appendChild(genre);
+
+    const page = document.createElement("p");
+    page.textContent = `Pages: ${book.page || "N/A"}`;
+    card.appendChild(page);
+
+    main.appendChild(card);
+});
 
 
 //function addBookToLibrary() {}
