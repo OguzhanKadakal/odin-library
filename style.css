@@ -40,18 +40,28 @@ ul, ol {
     list-style: none;
 }
 header {
-    height: 15%;
+    height: 10%;
     background-color: #3498db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 main {
-    height: 70%;
+    height: 80%;
     background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 
 footer {
-    height: 15%;
+    height: 10%;
     background-color: #3498db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .library-title {
@@ -61,5 +71,13 @@ footer {
 
 .footer-text {
     text-align: center;
+    color: var(--text-color);
+}
+
+.add-book-btn {
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--secondary-color);
     color: var(--text-color);
 }
