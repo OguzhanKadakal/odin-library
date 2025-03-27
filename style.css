@@ -81,3 +81,43 @@ footer {
     background-color: var(--secondary-color);
     color: var(--text-color);
 }
+
+dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.book-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.form-label {
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.form-input {
+    padding: 0.2rem;
+    border: 1px solid var(--text-color);
+    border-radius: 4px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 1rem;
+}
