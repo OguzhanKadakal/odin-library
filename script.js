@@ -79,7 +79,7 @@ const renderBooks = () => {
     card.appendChild(read);
 
     const readButton = document.createElement("button");
-    readButton.textContent = "Toggle Read";
+    readButton.textContent = "Toggle Read Status";
     readButton.classList.add("btn-read");
     readButton.addEventListener("click", () => {
       book.toggleReadStatus();
