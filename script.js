@@ -63,7 +63,8 @@ myLibrary.forEach((book) => {
     page.textContent = `Pages: ${book.page || "N/A"}`;
     card.appendChild(page);
 
-    main.appendChild(card);
+    const cards = document.querySelector(".book-cards")
+    cards.appendChild(card);
 });
 
 
