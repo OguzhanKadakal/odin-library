@@ -1,3 +1,15 @@
+class Book {
+  constructor(title, author, year, genre, page) {
+    this.id = crypto.randomUUID();
+    this.title = title;
+    this.author = author;
+    this.year = year;
+    this.genre = genre;
+    this.page = page;
+    this.read = false;
+  }
+}
+
 const myLibrary = [
   new Book("The Hobbit", "J.R.R. Tolkien", "1937", "Fantasy", 310),
   new Book("1984", "George Orwell", "1949", "Dystopian", 328),
@@ -6,19 +18,6 @@ const myLibrary = [
   new Book("The Great Gatsby", "F. Scott Fitzgerald", "1925", "Tragedy", 180),
   new Book("Moby-Dick", "Herman Melville", "1851", "Adventure", 635),
 ];
-
-function Book(title, author, year, genre, page) {
-  if (!new.target) {
-    throw Error("You must use the 'new' operator to call the constructor.");
-  }
-  this.id = crypto.randomUUID();
-  this.title = title;
-  this.author = author;
-  this.year = year;
-  this.genre = genre;
-  this.page = page;
-  this.read = false;
-}
 
 Book.prototype.toggleReadStatus = function () {
   this.read = !this.read;
